@@ -1,0 +1,1156 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="90" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Aleks\SparkED\Codepath 201\games.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>games.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="GAME_DATE_EST" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="GAME_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="GAME_STATUS_TEXT" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="HOME_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="VISITOR_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="SEASON" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="TEAM_ID_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="PTS_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG_PCT_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="REB_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="TEAM_ID_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="PTS_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG_PCT_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="REB_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="HOME_TEAM_WINS" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="222" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="GAME_DATE_EST" selected="False" />
+            <SelectField field="GAME_STATUS_TEXT" selected="False" />
+            <SelectField field="TEAM_ID_home" selected="False" />
+            <SelectField field="TEAM_ID_away" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="414" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [HOME_TEAM_WINS] = &quot;1&quot;&#xA;THEN &quot;0&quot;&#xA;ELSE &quot;1&quot;&#xA;ENDIF" field="VISITOR_TEAM_WINS" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[VISITOR_TEAM_WINS = IF [HOME_TEAM_WINS] = "1"
+THEN "0"
+ELSE "1"
+ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="630" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="GAME_ID" selected="True" />
+            <Field field="HOME_TEAM_ID" selected="True" />
+            <Field field="VISITOR_TEAM_ID" selected="True" />
+            <Field field="SEASON" selected="True" />
+            <Field field="PTS_HOME" selected="True" />
+            <Field field="FG_PCT_HOME" selected="True" />
+            <Field field="FT_PCT_HOME" selected="True" />
+            <Field field="FG3_PCT_HOME" selected="True" />
+            <Field field="AST_HOME" selected="True" />
+            <Field field="REB_HOME" selected="True" />
+            <Field field="PTS_VISITOR" selected="True" />
+            <Field field="FG_PCT_VISITOR" selected="True" />
+            <Field field="FT_PCT_VISITOR" selected="True" />
+            <Field field="FG3_PCT_VISITOR" selected="True" />
+            <Field field="AST_VISITOR" selected="True" />
+            <Field field="REB_VISITOR" selected="True" />
+            <Field field="HOME_TEAM_WINS" selected="True" />
+            <Field field="VISITOR_TEAM_WINS" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+            <Field name="HOME_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+            <Field name="VISITOR_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+            <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" />
+            <Field name="PTS_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="FG_PCT_HOME" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_HOME" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_HOME" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="REB_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="PTS_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="FG_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="REB_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="HOME_TEAM_WINS" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Byte" />
+            <Field name="VISITOR_TEAM_WINS" source="Formula: IF [HOME_TEAM_WINS] = &quot;1&quot;&#xA;THEN &quot;0&quot;&#xA;ELSE &quot;1&quot;&#xA;ENDIF" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="318" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>ToNumber([SEASON]) &gt;= 2017 AND
+ToNumber([SEASON]) &lt;= 2020</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ToNumber([SEASON]) &gt;= 2017 AND
+ToNumber([SEASON]) &lt;= 2020</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="522" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>Formula</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="GAME_ID" />
+            <Field name="HOME_TEAM_ID" />
+            <Field name="VISITOR_TEAM_ID" />
+            <Field name="SEASON" />
+            <Field name="PTS_home" />
+            <Field name="FG_PCT_home" />
+            <Field name="FT_PCT_home" />
+            <Field name="FG3_PCT_home" />
+            <Field name="AST_home" />
+            <Field name="REB_home" />
+            <Field name="PTS_away" />
+            <Field name="FG_PCT_away" />
+            <Field name="FT_PCT_away" />
+            <Field name="FG3_PCT_away" />
+            <Field name="AST_away" />
+            <Field name="REB_away" />
+            <Field name="HOME_TEAM_WINS" />
+            <Field name="VISITOR_TEAM_WINS" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression>IF Contains([_CurrentField_], "away")
+THEN Replace([_CurrentField_], "away", "VISITOR")
+ELSE Uppercase([_CurrentField_])
+ENDIF</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="GAME_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="HOME_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="VISITOR_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="SEASON" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="PTS_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG_PCT_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="REB_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="PTS_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG_PCT_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="REB_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="HOME_TEAM_WINS" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="VISITOR_TEAM_WINS" size="1073741823" source="Formula: IF [HOME_TEAM_WINS] = &quot;1&quot;&#xA;THEN &quot;0&quot;&#xA;ELSE &quot;1&quot;&#xA;ENDIF" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="52" y="0" width="865" height="370" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 18</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="77" y="217" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Aleks\SparkED\Codepath 201\games_details.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>games_details.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="GAME_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="TEAM_ABBREVIATION" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="TEAM_CITY" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="PLAYER_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="PLAYER_NAME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="NICKNAME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="START_POSITION" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="COMMENT" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="MIN" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FGM" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FGA" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FG_PCT" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FG3M" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FG3A" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FG3_PCT" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FTM" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FTA" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FT_PCT" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="OREB" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="DREB" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="REB" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="AST" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="STL" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="BLK" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="TO" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="PF" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="PTS" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="PLUS_MINUS" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="77" y="108" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Aleks\SparkED\Codepath 201\games.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>games.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="GAME_DATE_EST" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="GAME_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="GAME_STATUS_TEXT" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="HOME_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="VISITOR_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="SEASON" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="TEAM_ID_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="PTS_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG_PCT_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FT_PCT_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG3_PCT_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="AST_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="REB_home" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="TEAM_ID_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="PTS_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG_PCT_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FT_PCT_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG3_PCT_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="AST_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="REB_away" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="HOME_TEAM_WINS" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="306" y="157" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="GAME_ID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="GAME_ID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_GAME_ID" selected="False" rename="Right_GAME_ID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="522" y="49" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine2_65296_927614f331a8364789b3dbfd319cc4fa_\Engine_65296_a92cae9ad34b2040a437fe69435037a1~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="426" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>ToNumber([SEASON]) &gt;= 2017 AND
+ToNumber([SEASON]) &lt;= 2020</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>ToNumber([SEASON]) &gt;= 2017 AND
+ToNumber([SEASON]) &lt;= 2020</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="654" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="GAME_ID" action="GroupBy" rename="GAME_ID" />
+                <SummarizeField field="HOME_TEAM_ID" action="First" rename="First_HOME_TEAM_ID" />
+                <SummarizeField field="VISITOR_TEAM_ID" action="First" rename="First_VISITOR_TEAM_ID" />
+                <SummarizeField field="SEASON" action="First" rename="First_SEASON" />
+                <SummarizeField field="TEAM_ID_home" action="First" rename="First_TEAM_ID_home" />
+                <SummarizeField field="PTS_home" action="First" rename="First_PTS_home" />
+                <SummarizeField field="FG_PCT_home" action="First" rename="First_FG_PCT_home" />
+                <SummarizeField field="FT_PCT_home" action="First" rename="First_FT_PCT_home" />
+                <SummarizeField field="FG3_PCT_home" action="First" rename="First_FG3_PCT_home" />
+                <SummarizeField field="AST_home" action="First" rename="First_AST_home" />
+                <SummarizeField field="REB_home" action="First" rename="First_REB_home" />
+                <SummarizeField field="TEAM_ID_away" action="First" rename="First_TEAM_ID_away" />
+                <SummarizeField field="PTS_away" action="First" rename="First_PTS_away" />
+                <SummarizeField field="FG_PCT_away" action="First" rename="First_FG_PCT_away" />
+                <SummarizeField field="FT_PCT_away" action="First" rename="First_FT_PCT_away" />
+                <SummarizeField field="FG3_PCT_away" action="First" rename="First_FG3_PCT_away" />
+                <SummarizeField field="AST_away" action="First" rename="First_AST_away" />
+                <SummarizeField field="REB_away" action="First" rename="First_REB_away" />
+                <SummarizeField field="HOME_TEAM_WINS" action="First" rename="First_HOME_TEAM_WINS" />
+                <SummarizeField field="FGM" action="Sum" rename="Sum_FGM" />
+                <SummarizeField field="FGA" action="Sum" rename="Sum_FGA" />
+                <SummarizeField field="FG_PCT" action="Avg" rename="Avg_FG_PCT" />
+                <SummarizeField field="FG3M" action="Sum" rename="Sum_FG3M" />
+                <SummarizeField field="FG3A" action="Sum" rename="Sum_FG3A" />
+                <SummarizeField field="FG3_PCT" action="Avg" rename="Avg_FG3_PCT" />
+                <SummarizeField field="FTM" action="Sum" rename="Sum_FTM" />
+                <SummarizeField field="FTA" action="Sum" rename="Sum_FTA" />
+                <SummarizeField field="FT_PCT" action="Avg" rename="Avg_FT_PCT" />
+                <SummarizeField field="OREB" action="Sum" rename="Sum_OREB" />
+                <SummarizeField field="DREB" action="Sum" rename="Sum_DREB" />
+                <SummarizeField field="REB" action="Sum" rename="Sum_REB" />
+                <SummarizeField field="AST" action="Sum" rename="Sum_AST" />
+                <SummarizeField field="STL" action="Sum" rename="Sum_STL" />
+                <SummarizeField field="BLK" action="Sum" rename="Sum_BLK" />
+                <SummarizeField field="TO" action="Sum" rename="Sum_TO" />
+                <SummarizeField field="PF" action="Sum" rename="Sum_PF" />
+                <SummarizeField field="PTS" action="Sum" rename="Sum_PTS" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="546" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="GAME_DATE_EST" selected="True" />
+                <Field field="GAME_ID" selected="True" />
+                <Field field="GAME_STATUS_TEXT" selected="True" />
+                <Field field="HOME_TEAM_ID" selected="True" />
+                <Field field="VISITOR_TEAM_ID" selected="True" />
+                <Field field="SEASON" selected="True" />
+                <Field field="TEAM_ID_home" selected="True" />
+                <Field field="PTS_home" selected="True" />
+                <Field field="FG_PCT_home" selected="True" />
+                <Field field="FT_PCT_home" selected="True" />
+                <Field field="FG3_PCT_home" selected="True" />
+                <Field field="AST_home" selected="True" />
+                <Field field="REB_home" selected="True" />
+                <Field field="TEAM_ID_away" selected="True" />
+                <Field field="PTS_away" selected="True" />
+                <Field field="FG_PCT_away" selected="True" />
+                <Field field="FT_PCT_away" selected="True" />
+                <Field field="FG3_PCT_away" selected="True" />
+                <Field field="AST_away" selected="True" />
+                <Field field="REB_away" selected="True" />
+                <Field field="HOME_TEAM_WINS" selected="True" />
+                <Field field="TEAM_ID" selected="True" />
+                <Field field="TEAM_ABBREVIATION" selected="True" />
+                <Field field="TEAM_CITY" selected="True" />
+                <Field field="PLAYER_ID" selected="True" />
+                <Field field="PLAYER_NAME" selected="True" />
+                <Field field="NICKNAME" selected="True" />
+                <Field field="START_POSITION" selected="True" />
+                <Field field="COMMENT" selected="True" />
+                <Field field="MIN" selected="True" />
+                <Field field="FGM" selected="True" />
+                <Field field="FGA" selected="True" />
+                <Field field="FG_PCT" selected="True" />
+                <Field field="FG3M" selected="True" />
+                <Field field="FG3A" selected="True" />
+                <Field field="FG3_PCT" selected="True" />
+                <Field field="FTM" selected="True" />
+                <Field field="FTA" selected="True" />
+                <Field field="FT_PCT" selected="True" />
+                <Field field="OREB" selected="True" />
+                <Field field="DREB" selected="True" />
+                <Field field="REB" selected="True" />
+                <Field field="AST" selected="True" />
+                <Field field="STL" selected="True" />
+                <Field field="BLK" selected="True" />
+                <Field field="TO" selected="True" />
+                <Field field="PF" selected="True" />
+                <Field field="PTS" selected="True" />
+                <Field field="PLUS_MINUS" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="GAME_DATE_EST" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Date" />
+                <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="GAME_STATUS_TEXT" size="5" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="String" />
+                <Field name="HOME_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="VISITOR_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" />
+                <Field name="TEAM_ID_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="PTS_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="FG_PCT_home" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FT_PCT_home" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG3_PCT_home" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="AST_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="REB_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="TEAM_ID_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="PTS_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="FG_PCT_away" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FT_PCT_away" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG3_PCT_away" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="AST_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="REB_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="HOME_TEAM_WINS" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Byte" />
+                <Field name="TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Int32" />
+                <Field name="TEAM_ABBREVIATION" size="3" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="String" />
+                <Field name="TEAM_CITY" size="13" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="String" />
+                <Field name="PLAYER_ID" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Int32" />
+                <Field name="PLAYER_NAME" size="24" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="NICKNAME" size="10" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="START_POSITION" size="1" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="String" />
+                <Field name="COMMENT" size="33" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="MIN" size="5" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="String" />
+                <Field name="FGM" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="FGA" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="FG_PCT" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FG3M" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="FG3A" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="FG3_PCT" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="FTM" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="FTA" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="FT_PCT" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="V_String" />
+                <Field name="OREB" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="DREB" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="REB" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="AST" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="STL" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="BLK" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="TO" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="PF" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="PTS" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+                <Field name="PLUS_MINUS" source="File: C:\Aleks\SparkED\Codepath 201\games_details.csv" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+            <Position x="834" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <RenameMode>Formula</RenameMode>
+              <Fields orderChanged="False">
+                <Field name="GAME_ID" />
+                <Field name="First_HOME_TEAM_ID" />
+                <Field name="First_VISITOR_TEAM_ID" />
+                <Field name="First_SEASON" />
+                <Field name="First_TEAM_ID_home" />
+                <Field name="First_PTS_home" />
+                <Field name="First_FG_PCT_home" />
+                <Field name="First_FT_PCT_home" />
+                <Field name="First_FG3_PCT_home" />
+                <Field name="First_AST_home" />
+                <Field name="First_REB_home" />
+                <Field name="First_TEAM_ID_away" />
+                <Field name="First_PTS_away" />
+                <Field name="First_FG_PCT_away" />
+                <Field name="First_FT_PCT_away" />
+                <Field name="First_FG3_PCT_away" />
+                <Field name="First_AST_away" />
+                <Field name="First_REB_away" />
+                <Field name="First_HOME_TEAM_WINS" />
+                <Field name="Sum_FGM" />
+                <Field name="Sum_FGA" />
+                <Field name="Avg_FG_PCT" />
+                <Field name="Sum_FG3M" />
+                <Field name="Sum_FG3A" />
+                <Field name="Avg_FG3_PCT" />
+                <Field name="Sum_FTM" />
+                <Field name="Sum_FTA" />
+                <Field name="Avg_FT_PCT" />
+                <Field name="Sum_OREB" />
+                <Field name="Sum_DREB" />
+                <Field name="Sum_REB" />
+                <Field name="Sum_AST" />
+                <Field name="Sum_STL" />
+                <Field name="Sum_BLK" />
+                <Field name="Sum_TO" />
+                <Field name="Sum_PF" />
+                <Field name="Sum_PTS" />
+                <Field name="Avg_FG" />
+                <Field name="AVG_FG3" />
+                <Field name="AVG_FT" />
+                <Field name="*Unknown" />
+              </Fields>
+              <Expression>IF StartsWith([_CurrentField_], "First_")
+THEN Replace([_CurrentField_], "First_", "")
+ELSE [_CurrentField_]
+ENDIF</Expression>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="HOME_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="VISITOR_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" />
+                <Field name="TEAM_ID_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="PTS_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="FG_PCT_home" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FT_PCT_home" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG3_PCT_home" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="AST_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="REB_home" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="TEAM_ID_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+                <Field name="PTS_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="FG_PCT_away" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FT_PCT_away" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="FG3_PCT_away" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+                <Field name="AST_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="REB_away" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+                <Field name="HOME_TEAM_WINS" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Byte" />
+                <Field name="Sum_FGM" source="Summarize: Sum - FGM" type="Double" />
+                <Field name="Sum_FGA" source="Summarize: Sum - FGA" type="Double" />
+                <Field name="Avg_FG_PCT" source="Summarize: Avg - FG_PCT" type="Double" />
+                <Field name="Sum_FG3M" source="Summarize: Sum - FG3M" type="Double" />
+                <Field name="Sum_FG3A" source="Summarize: Sum - FG3A" type="Double" />
+                <Field name="Avg_FG3_PCT" source="Summarize: Avg - FG3_PCT" type="Double" />
+                <Field name="Sum_FTM" source="Summarize: Sum - FTM" type="Double" />
+                <Field name="Sum_FTA" source="Summarize: Sum - FTA" type="Double" />
+                <Field name="Avg_FT_PCT" source="Summarize: Avg - FT_PCT" type="Double" />
+                <Field name="Sum_OREB" source="Summarize: Sum - OREB" type="Double" />
+                <Field name="Sum_DREB" source="Summarize: Sum - DREB" type="Double" />
+                <Field name="Sum_REB" source="Summarize: Sum - REB" type="Double" />
+                <Field name="Sum_AST" source="Summarize: Sum - AST" type="Double" />
+                <Field name="Sum_STL" source="Summarize: Sum - STL" type="Double" />
+                <Field name="Sum_BLK" source="Summarize: Sum - BLK" type="Double" />
+                <Field name="Sum_TO" source="Summarize: Sum - TO" type="Double" />
+                <Field name="Sum_PF" source="Summarize: Sum - PF" type="Double" />
+                <Field name="Sum_PTS" source="Summarize: Sum - PTS" type="Double" />
+                <Field name="Avg_FG" source="Formula: [Sum_FGM] / [Sum_FGA]" type="Double" />
+                <Field name="AVG_FG3" source="Formula: [Sum_FG3M] / [Sum_FG3A]" type="Double" />
+                <Field name="AVG_FT" size="1073741823" source="Formula: [Sum_FTM] / [Sum_FTA]" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="750" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Sum_FGM] / [Sum_FGA]" field="Avg_FG" size="8" type="Double" />
+                <FormulaField expression="[Sum_FG3M] / [Sum_FG3A]" field="AVG_FG3" size="8" type="Double" />
+                <FormulaField expression="[Sum_FTM] / [Sum_FTA]" field="AVG_FT" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Avg_FG = [Sum_FGM] / [Sum_FGA]
+AVG_FG3 = [Sum_FG3M] / [Sum_FG3A]
+AVG_FT = [Sum_F...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="330" y="270" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Aleks\SparkED\Codepath 201\ranking.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>ranking.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="LEAGUE_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="SEASON_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="STANDINGSDATE" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="CONFERENCE" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="TEAM" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="G" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="W" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="L" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="W_PCT" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="HOME_RECORD" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="ROAD_RECORD" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+                <Field name="RETURNTOPLAY" size="254" source="File: C:\Aleks\SparkED\Codepath 201\ranking.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicSelect.DynamicSelect">
+        <Position x="750" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Formula</Mode>
+          <Expression>!Contains([Name], "VISITOR")</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Home Data</AnnotationText>
+          <DefaultAnnotationText>Home Data</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicSelect" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicSelect.DynamicSelect">
+        <Position x="750" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Formula</Mode>
+          <Expression>!Contains([Name], "HOME")</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Visitor Data</AnnotationText>
+          <DefaultAnnotationText>Visitor Data</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicSelect" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="906" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>Custom</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" column="1" />
+                <Field name="HOME_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" column="2" />
+                <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" column="3" />
+                <Field name="PTS_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" column="4" />
+                <Field name="FG_PCT_HOME" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" column="5" />
+                <Field name="FT_PCT_HOME" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" column="6" />
+                <Field name="FG3_PCT_HOME" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" column="7" />
+                <Field name="AST_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" column="8" />
+                <Field name="REB_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" column="9" />
+                <Field name="HOME_TEAM_WINS" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Byte" column="10" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" column="1" />
+                <Field name="VISITOR_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" column="2" />
+                <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" column="3" />
+                <Field name="PTS_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" column="4" />
+                <Field name="FG_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" column="5" />
+                <Field name="FT_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" column="6" />
+                <Field name="FG3_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" column="7" />
+                <Field name="AST_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" column="8" />
+                <Field name="REB_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" column="9" />
+                <Field name="VISITOR_TEAM_WINS" source="Formula: IF [HOME_TEAM_WINS] = &quot;1&quot;&#xA;THEN &quot;0&quot;&#xA;ELSE &quot;1&quot;&#xA;ENDIF" type="Byte" column="10" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="1002" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>Formula</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="GAME_ID" />
+            <Field name="HOME_TEAM_ID" />
+            <Field name="SEASON" />
+            <Field name="PTS_HOME" />
+            <Field name="FG_PCT_HOME" />
+            <Field name="FT_PCT_HOME" />
+            <Field name="FG3_PCT_HOME" />
+            <Field name="AST_HOME" />
+            <Field name="REB_HOME" />
+            <Field name="HOME_TEAM_WINS" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression>IF Contains([_CurrentField_], "HOME_")
+THEN Replace([_CurrentField_], "HOME_", "")
+ELSEIF Contains([_CurrentField_], "_HOME")
+THEN Replace([_CurrentField_], "_HOME", "")
+ELSE Uppercase([_CurrentField_])
+ENDIF</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+            <Field name="TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+            <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" />
+            <Field name="PTS" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="FG_PCT" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="REB" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
+            <Field name="TEAM_WINS" source="(Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1194" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="TEAM_ID" action="GroupBy" rename="TEAM_ID" />
+            <SummarizeField field="SEASON" action="GroupBy" rename="SEASON" />
+            <SummarizeField field="PTS" action="Avg" rename="Avg_PTS" />
+            <SummarizeField field="FG_PCT" action="Avg" rename="Avg_FG_PCT" />
+            <SummarizeField field="FT_PCT" action="Avg" rename="Avg_FT_PCT" />
+            <SummarizeField field="FG3_PCT" action="Avg" rename="Avg_FG3_PCT" />
+            <SummarizeField field="AST" action="Avg" rename="Avg_AST" />
+            <SummarizeField field="REB" action="Avg" rename="Avg_REB" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1098" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="FG_PCT" selected="True" type="Double" size="8" />
+            <SelectField field="FT_PCT" selected="True" type="Double" size="8" />
+            <SelectField field="FG3_PCT" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings>
+        <Position x="1338" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="do target">True</Value>
+          <Value name="target">TEAM_ID</Value>
+          <Value name="target level" />
+          <Value name="use fields">""</Value>
+          <Value name="Pearson">True</Value>
+          <Value name="Spearman">False</Value>
+          <Value name="Hoeffding">False</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\Association_Analysis.yxmc" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="17" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Join" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="True" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="10" Connection="Targets" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="25" Connection="Data Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>NBA Predictor</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="3ccf7814-1456-4d9b-b6ae-8a055714dc9e" />
+      <Telemetry>
+        <PreviousWorkflowId value="2c786490-9699-4fcf-9388-a4f3b1dfc02a" />
+        <OriginWorkflowId value="2c786490-9699-4fcf-9388-a4f3b1dfc02a" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
