@@ -276,7 +276,7 @@ ENDIF</Expression>
     </Node>
     <Node ToolID="44">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="786" y="498" />
+        <Position x="786" y="474" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -294,7 +294,8 @@ ENDIF</Expression>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText />
+          <AnnotationText>Home game avg stats</AnnotationText>
+          <DefaultAnnotationText>Home game avg stats</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -302,7 +303,7 @@ ENDIF</Expression>
     </Node>
     <Node ToolID="46">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="786" y="570" />
+        <Position x="786" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -320,7 +321,8 @@ ENDIF</Expression>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText />
+          <AnnotationText>away game avg stats</AnnotationText>
+          <DefaultAnnotationText>away game avg stats</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
