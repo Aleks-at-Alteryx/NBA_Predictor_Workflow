@@ -66,6 +66,7 @@
           <CommaDecimal value="False" />
           <SelectFields>
             <SelectField field="GAME_DATE_EST" selected="False" />
+            <SelectField field="GAME_ID" selected="False" />
             <SelectField field="GAME_STATUS_TEXT" selected="False" />
             <SelectField field="TEAM_ID_home" selected="False" />
             <SelectField field="TEAM_ID_away" selected="False" />
@@ -140,24 +141,23 @@ ENDIF
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
-            <Field name="HOME_TEAM_ID" size="13" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="VISITOR_TEAM_ID" size="13" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" />
-            <Field name="PTS_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
-            <Field name="FG_PCT_HOME" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="FT_PCT_HOME" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="FG3_PCT_HOME" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="AST_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
-            <Field name="REB_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
-            <Field name="PTS_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
-            <Field name="FG_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="FT_PCT_VISITOR" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="FG3_PCT_VISITOR" size="20" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
-            <Field name="AST_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
-            <Field name="REB_VISITOR" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
-            <Field name="HOME_TEAM_WINS" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Byte" />
-            <Field name="VISITOR_TEAM_WINS" source="Formula: IF [HOME_TEAM_WINS] = &quot;1&quot;&#xA;THEN &quot;0&quot;&#xA;ELSE &quot;1&quot;&#xA;ENDIF" type="Byte" />
+            <Field name="HOME_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="VISITOR_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="SEASON" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="PTS_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG_PCT_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="REB_HOME" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="PTS_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG_PCT_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FT_PCT_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="FG3_PCT_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="AST_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="REB_VISITOR" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="HOME_TEAM_WINS" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="VISITOR_TEAM_WINS" size="1073741823" source="Formula: IF [HOME_TEAM_WINS] = &quot;1&quot;&#xA;THEN &quot;0&quot;&#xA;ELSE &quot;1&quot;&#xA;ENDIF" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -204,7 +204,6 @@ ENDIF</Expression>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="GAME_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
             <Field name="HOME_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
             <Field name="VISITOR_TEAM_ID" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
             <Field name="SEASON" size="254" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
@@ -373,12 +372,14 @@ ENDIF</Expression>
           <CommaDecimal value="False" />
           <SelectFields>
             <SelectField field="Mode_HOME_TEAM_WINS" selected="True" type="String" size="3" />
+            <SelectField field="Mode_VISITOR_TEAM_WINS" selected="False" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText />
+          <AnnotationText>Drop unnecessary columns</AnnotationText>
+          <DefaultAnnotationText>Drop unnecessary columns</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -408,7 +409,7 @@ ENDIF</Expression>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_8d6858131fa9413c8f66db1c6eaef7de_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_61324_0b310bec821a4f7c9bf2c51ed4f1fbf6_\Engine_3296_7ddb08a8da994cf2b51146359018bf6a_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -439,7 +440,7 @@ ENDIF</Expression>
               <Value name="do target">True</Value>
               <Value name="target">Mode_HOME_TEAM_WINS</Value>
               <Value name="target level">1</Value>
-              <Value name="use fields">"SEASON","Avg_PTS_HOME","Avg_FG_PCT_HOME","Avg_FT_PCT_HOME","Avg_FG3_PCT_HOME","Avg_AST_HOME","Avg_REB_HOME","Avg_PTS_VISITOR","Avg_FG_PCT_VISITOR","Avg_FT_PCT_VISITOR","Avg_FG3_PCT_VISITOR","Avg_AST_VISITOR","Avg_REB_VISITOR"</Value>
+              <Value name="use fields">"Avg_PTS_HOME","Avg_FG_PCT_HOME","Avg_FT_PCT_HOME","Avg_FG3_PCT_HOME","Avg_AST_HOME","Avg_REB_HOME","Avg_PTS_VISITOR","Avg_FG_PCT_VISITOR","Avg_FT_PCT_VISITOR","Avg_FG3_PCT_VISITOR","Avg_AST_VISITOR","Avg_REB_VISITOR"</Value>
               <Value name="Pearson">True</Value>
               <Value name="Spearman">False</Value>
               <Value name="Hoeffding">False</Value>
@@ -462,7 +463,7 @@ ENDIF</Expression>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_e1615fbb81e24edfad2ddb66dfe78aea_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_61324_0b310bec821a4f7c9bf2c51ed4f1fbf6_\Engine_3296_012621e6370d42a59293b665974b33a2_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -646,7 +647,7 @@ ToNumber([SEASON]) &lt;= 2020</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_a3df69a4777c4a32a9fb42ddcc712423_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_61324_0b310bec821a4f7c9bf2c51ed4f1fbf6_\Engine_3296_bba685489b134beaa27a02ea909d6a85_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -674,7 +675,7 @@ ToNumber([SEASON]) &lt;= 2020</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_1068b88c74c04a01a1e87dbc338097cd_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_61324_0b310bec821a4f7c9bf2c51ed4f1fbf6_\Engine_3296_f4d67b224c184ce1ae40cd9edaad4b63_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
