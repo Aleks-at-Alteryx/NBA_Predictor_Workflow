@@ -141,8 +141,8 @@ ENDIF
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="GAME_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
-            <Field name="HOME_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
-            <Field name="VISITOR_TEAM_ID" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int32" />
+            <Field name="HOME_TEAM_ID" size="13" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
+            <Field name="VISITOR_TEAM_ID" size="13" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
             <Field name="SEASON" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Int16" />
             <Field name="PTS_HOME" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="Double" />
             <Field name="FG_PCT_HOME" size="19" source="File: C:\Aleks\SparkED\Codepath 201\games.csv" type="V_String" />
@@ -408,7 +408,7 @@ ENDIF</Expression>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_80848_31cbb60c956f4c0cae4d27fbb0816bce_\Engine_3296_e347addd272b4d659993219f0914c0af_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_8d6858131fa9413c8f66db1c6eaef7de_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -462,7 +462,7 @@ ENDIF</Expression>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_80848_31cbb60c956f4c0cae4d27fbb0816bce_\Engine_3296_c3232646eae54c9bb749ff02833ad57a_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_e1615fbb81e24edfad2ddb66dfe78aea_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -646,7 +646,7 @@ ToNumber([SEASON]) &lt;= 2020</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_80848_31cbb60c956f4c0cae4d27fbb0816bce_\Engine_3296_ce969d62e6614012a9ad1605045ceae3_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_a3df69a4777c4a32a9fb42ddcc712423_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -674,7 +674,7 @@ ToNumber([SEASON]) &lt;= 2020</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_80848_31cbb60c956f4c0cae4d27fbb0816bce_\Engine_3296_576c483b3fb64625ba7d113f007f8d2d_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81860_7c658bb3e1bd4eb3bb4ce504665fae4a_\Engine_3296_1068b88c74c04a01a1e87dbc338097cd_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
