@@ -414,7 +414,7 @@ ENDIF</Expression>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_60856_1dd47ac99527454db6f17f7f83ac0984_\Engine_90016_2c463f9ea4da4c92928e4c2aae578c5a_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81740_77a90209cba84e52bff67103fe4c6f61_\Engine_90016_25ad0088b3354da29ff24b5d639df62b_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -509,7 +509,7 @@ ENDIF</Expression>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_60856_1dd47ac99527454db6f17f7f83ac0984_\Engine_90016_6cb1995e025540b096d773ad5c1b74f3_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_81740_77a90209cba84e52bff67103fe4c6f61_\Engine_90016_e3988752734143d7855de34d9367c2bc_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -531,129 +531,11 @@ ENDIF</Expression>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
-    <Node ToolID="21">
-      <GuiSettings Plugin="Score">
-        <Position x="1554" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Value name="modelChoice">Local Model</Value>
-          <Value name="score field">
-          </Value>
-          <Value name="is oversampled">False</Value>
-          <Value name="oversampled value">
-          </Value>
-          <Value name="original percent">2</Value>
-          <Value name="log y">False</Value>
-          <Value name="prediction.interval">False</Value>
-          <Value name="interval.level">95</Value>
-          <Value name="append.xdf">False</Value>
-          <Value name="num.records">256000</Value>
-          <Value name="credentials">
-          </Value>
-          <Value name="models">
-          </Value>
-          <Value name="page">
-          </Value>
-          <Value name="errorStatus">
-          </Value>
-          <Value name="modelDetailJSON">
-          </Value>
-          <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
-          <Value name="promoteURL">
-          </Value>
-          <Value name="username">
-          </Value>
-          <Value name="model_name">
-          </Value>
-          <Value name="model_owner">
-          </Value>
-          <Value name="apiKey">
-          </Value>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
-    </Node>
-    <Node ToolID="22">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1230" y="330" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>[SEASON] = 2021</Expression>
-          <Mode>Custom</Mode>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>[SEASON] = 2021</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-    </Node>
-    <Node ToolID="23">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="1638" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_60856_1dd47ac99527454db6f17f7f83ac0984_\Engine_90016_48614109c1b84b9099ddad4014ac0b7b_.yxdb</TempFile>
-          <TempFileDataProfiling />
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Profile</DefaultTab>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
-    <Node ToolID="25">
-      <GuiSettings>
-        <Position x="102" y="138" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Value name="estimation pct">34</Value>
-          <Value name="validation pct">33</Value>
-          <Value name="rand seed">1</Value>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
-      </Properties>
-      <EngineSettings Macro="Predictive Tools\Create_Samples.yxmc" />
-    </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
       <Destination ToolID="5" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="25" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="5" Connection="Output" />
@@ -712,28 +594,12 @@ ENDIF</Expression>
       <Destination ToolID="19" Connection="Right Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="14" Connection="False" />
-      <Destination ToolID="22" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="15" Connection="Output" />
       <Destination ToolID="16" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="19" Connection="Reports" />
       <Destination ToolID="20" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="19" Connection="Output" />
-      <Destination ToolID="21" Connection="Model" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="22" Connection="True" />
-      <Destination ToolID="21" Connection="Data" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="21" Connection="Output" />
-      <Destination ToolID="23" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
